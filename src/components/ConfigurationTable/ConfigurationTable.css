@@ -1,0 +1,80 @@
+.table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd; /* Add horizontal lines */
+}
+
+.table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.table td {
+  white-space: nowrap;
+}
+
+.table th:first-child, .table td:first-child {
+  width: 33%;
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+  width: 33%;
+}
+
+.table th:nth-child(3), .table td:nth-child(3) {
+  width: 33%;
+}
+
+.add-button {
+  width: 33%; /* Match the width of the columns */
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.add-button:hover {
+  background-color: #e55b00;
+}
+
+.building-type {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.farm {
+  color: #4caf50; /* Green */
+  background-color: #e8f5e9;
+}
+
+.academy {
+  color: #2196f3; /* Blue */
+  background-color: #e3f2fd;
+}
+
+.headquarters {
+  color: #f44336; /* Red */
+  background-color: #ffebee;
+}
+
+.lumbermill {
+  color: #ff9800; /* Orange */
+  background-color: #fff3e0;
+}
+
+.barracks {
+  color: #9c27b0; /* Purple */
+  background-color: #f3e5f5;
+}
