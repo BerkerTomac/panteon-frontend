@@ -4,11 +4,19 @@ import { fetchConfigurations, addConfiguration } from '../features/configuration
 import './ConfigurationPage.css';
 import AddConfigurationModal from '../components/Modals/ConfigurationModal';
 import ConfigurationTable from '../components/ConfigurationTable/ConfigurationTable';
+import { useLocation } from 'react-router-dom';
+
 
 const ConfigurationPage = () => {
   const dispatch = useDispatch();
   const { configurations, status, error } = useSelector((state) => state.configuration);
   const [showModal, setShowModal] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    localStorage.setItem('lastPath', location.pathname);
+  }, [location]);
 
   useEffect(() => {
     dispatch(fetchConfigurations());

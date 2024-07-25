@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { clearErrors } from '../../features/auth/slices/authSlice';
 import './AuthForm.css';
 import logo from '../../assets/panteonlogo.jpg';
+import { useLocation } from 'react-router-dom';
+
 
 const AuthForm = () => {
   const [activeTab, setActiveTab] = useState('login');
   const dispatch = useDispatch();
+  const location = useLocation();
+
+    useEffect(() => {
+    localStorage.setItem('lastPath', location.pathname);
+  }, [location]);
+
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);

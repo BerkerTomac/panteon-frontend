@@ -1,14 +1,14 @@
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+// components/NotFound.js
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const NotFound = () => {
   const navigate = useNavigate();
-  const location = useLocation();
 
-  React.useEffect(() => {
-    const lastPath = location.state?.from || window.location.pathname + window.location.search;
+  useEffect(() => {
+    const lastPath = localStorage.getItem('lastPath') || '/';
     navigate(lastPath, { replace: true });
-  }, [navigate, location]);
+  }, [navigate]);
 
   return (
     <div>
