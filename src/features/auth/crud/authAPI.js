@@ -14,7 +14,7 @@
 import axios from 'axios';
 
 // Set the base URL for all requests
-const BASE_URL = 'http://panteonbackend.runasp.net';
+const BASE_URL = 'https://panteonbackend.runasp.net';
 
 export const login = async (credentials) => {
   const response = await axios.post(`${BASE_URL}/api/user/login`, credentials);

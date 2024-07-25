@@ -18,7 +18,7 @@
 import axios from 'axios';
 
 // Set the base URL for all requests
-const BASE_URL = 'http://panteonbackend.runasp.net';
+const BASE_URL = 'https://panteonbackend.runasp.net';
 
 export const fetchConfigurationsAPI = async () => {
   const response = await axios.get(`${BASE_URL}/api/config/getconfig`);
