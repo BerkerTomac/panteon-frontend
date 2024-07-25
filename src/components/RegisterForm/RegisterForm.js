@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../../features/auth/actions/authActions";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser } from '../../features/auth/actions/authActions';
 
 const RegisterForm = ({ onRegisterSuccess }) => {
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const { status, error } = useSelector((state) => state.auth);
 
@@ -60,12 +60,8 @@ const RegisterForm = ({ onRegisterSuccess }) => {
             required
           />
         </div>
-        <button
-          type="submit"
-          className="btn-register"
-          disabled={status === "loading"}
-        >
-          {status === "loading" ? "Registering..." : "Register"}
+        <button type="submit" className="btn-register" disabled={status === 'loading'}>
+          {status === 'loading' ? 'Registering...' : 'Register'}
         </button>
       </form>
     </>
