@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
-import { clearErrors } from '../../features/auth/slices/authSlice'; // Add this import
+import { clearErrors } from '../../features/auth/slices/authSlice'; 
 import './AuthForm.css';
 import logo from '../../assets/panteonlogo.jpg';
 
