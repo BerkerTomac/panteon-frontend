@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/panteon-frontend/static/css/main.072dc903.css",
-    "main.js": "/panteon-frontend/static/js/main.0fa0ae56.js",
+    "main.js": "/panteon-frontend/static/js/main.b972f4bc.js",
     "index.html": "/panteon-frontend/index.html",
     "main.072dc903.css.map": "/panteon-frontend/static/css/main.072dc903.css.map",
-    "main.0fa0ae56.js.map": "/panteon-frontend/static/js/main.0fa0ae56.js.map"
+    "main.b972f4bc.js.map": "/panteon-frontend/static/js/main.b972f4bc.js.map"
   },
   "entrypoints": [
     "static/css/main.072dc903.css",
-    "static/js/main.0fa0ae56.js"
+    "static/js/main.b972f4bc.js"
   ]
 }
