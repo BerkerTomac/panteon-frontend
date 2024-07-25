@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../features/auth/actions/authActions';
 import { useNavigate } from 'react-router-dom';
-import { FaEye, FaEyeSlash, FaUser, FaLock } from 'react-icons/fa';
+import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const LoginForm = ({ setActiveTab }) => {
   const [username, setUsername] = useState('');
@@ -21,50 +21,34 @@ const LoginForm = ({ setActiveTab }) => {
     });
   };
 
-  const toggleShowPassword = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
-
   return (
     <>
-      {error && (
-        <div className="error">
-          {Array.isArray(error) ? (
-            error.map((err, index) => <p key={index}>{err.description}</p>)
-          ) : (
-            <p>{error}</p>
-          )}
-        </div>
-      )}
+      {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <div className="input-icon">
-            <FaUser />
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Username"
-              required
-            />
-          </div>
+        <div className="form-group input-icon">
+          <FaUser />
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+            required
+          />
         </div>
-        <div className="form-group">
-          <div className="input-icon">
-            <FaLock />
-            <input
-              type={showPassword ? 'text' : 'password'}
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-            />
-            <span className="toggle-password" onClick={toggleShowPassword}>
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
-          </div>
+        <div className="form-group input-icon">
+          <FaLock />
+          <input
+            type={showPassword ? 'text' : 'password'}
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+          />
+          <span className="toggle-password" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
         </div>
         <button type="submit" className="btn-login" disabled={status === 'loading'}>
           {status === 'loading' ? 'Logging in...' : 'Login'}

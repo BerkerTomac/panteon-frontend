@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
-import { clearErrors } from '../../features/auth/slices/authSlice'; 
+import { clearErrors } from '../../features/auth/slices/authSlice';
 import './AuthForm.css';
 import logo from '../../assets/panteonlogo.jpg';
 
 const AuthForm = () => {
   const [activeTab, setActiveTab] = useState('login');
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    dispatch(clearErrors()); 
+    dispatch(clearErrors());
   };
 
   const handleRegistrationSuccess = () => {
@@ -37,7 +37,7 @@ const AuthForm = () => {
             Register
           </button>
         </div>
-        {activeTab === 'login' && <LoginForm />}
+        {activeTab === 'login' && <LoginForm setActiveTab={setActiveTab} />}
         {activeTab === 'register' && <RegisterForm onRegisterSuccess={handleRegistrationSuccess} />}
       </div>
     </div>
