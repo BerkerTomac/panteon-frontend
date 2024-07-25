@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename='/panteon-frontend'>
+    <Router basename='/panteon-frontend/login'>
       <div className="App">
         <Routes>
           <Route path="/" element={<Navigate replace to="/login" />} />
